@@ -3,6 +3,7 @@ int stato = 0;
 
 while (continuareCiclo)
 {
+    Console.Clear();
     if (stato == 0)
     {
         introduzione();
@@ -22,13 +23,23 @@ while (continuareCiclo)
         var secondaScelta = int.Parse(Console.ReadLine());
         if (secondaScelta == 1)
         {
-            Console.WriteLine("sei andato avanti");
-            continuareCiclo = false; // Esci dal ciclo principale
+            Console.WriteLine("sei andato avanti\nPremere 1 per tornare al menu principale\npremere 2 per chiudere");
+            secondaScelta = int.Parse(Console.ReadLine());
+                if(secondaScelta == 1)
+            {
+                stato = 0;
+            }
+            else if (secondaScelta == 2){
+                continuareCiclo = false;
+                
+            }
+             // Esci dal ciclo principale
         }
         else if (secondaScelta == 2)
         {
             Console.WriteLine("Stai tornando indietro.");
             stato = 0; // Torna al primo menu
+            
         }
         else
         {
